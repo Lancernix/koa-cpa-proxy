@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "edgeone pages dev",
     "dev:local": "node test-local-server.js",
-    "build": "edgeone pages build",
+    "build": "echo 'No build step needed for Koa app'",
     "lint": "eslint ."
   },
   "dependencies": {
