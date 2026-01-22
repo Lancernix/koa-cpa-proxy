@@ -1,34 +1,24 @@
 {
-  "name": "koa-template",
-  "version": "0.1.0",
+  "name": "koa-cpa-proxy",
+  "version": "1.0.0",
+  "description": "A simple HTTP proxy service for AI APIs using Koa framework on EdgeOne Pages",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "edgeone pages dev",
+    "dev:local": "node test-local-server.js",
+    "build": "edgeone pages build",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@koa/router": "^14.0.0",
-    "@radix-ui/react-slot": "^1.2.3",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "koa": "^3.0.1",
-    "lucide-react": "^0.539.0",
-    "next": "15.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "tailwind-merge": "^3.3.1"
+    "koa": "^3.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
+    "edgeone": "^1.2.22",
     "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
