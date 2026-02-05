@@ -35,7 +35,7 @@ cp .env.example .env
 ```env
 SERVICE_1=https://api.openai.com
 SERVICE_2=https://api.anthropic.com
-TIMEOUT_MS=600000
+TIMEOUT_MS=120000
 ```
 
 #### 2. 启动本地开发服务

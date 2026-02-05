@@ -3,8 +3,8 @@ import Koa from 'koa';
 // Create Koa application
 const app = new Koa();
 
-// 默认超时 600秒 (10分钟，适合 AI 服务长时间处理)
-const TIMEOUT_MS = parseInt(process.env.TIMEOUT_MS || '600000', 10);
+// 默认超时 120秒 (2分钟，EO最大支持)
+const TIMEOUT_MS = parseInt(process.env.TIMEOUT_MS || '120000', 10);
 
 /**
  * 从 Node.js IncomingMessage stream 读取 body
@@ -45,6 +45,15 @@ async function fetchWithTimeout(url, options, timeoutMs) {
     const response = await fetch(url, {
       ...options,
       signal: controller.signal,
+      eo: {
+        stream: true,          // 保留，SSE流式核心，不动
+        cache: { enable: false }, // 保留，禁用缓存，不动
+        timeoutSetting: {
+          // 仅改这两个数值：60000 → 120000（毫秒），其他不动
+          readTimeout: 120000,  
+          writeTimeout: 120000 
+        }
+      }
     });
     clearTimeout(timeoutId);
     return response;

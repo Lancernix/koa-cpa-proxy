@@ -1,0 +1,11 @@
+{
+    "nodeFunctionsConfig": {
+        "maxDuration": 120
+    },
+    "caches": [
+        {
+        "source": "/*",
+        "cacheTtl": 0
+        }
+    ]
+}
